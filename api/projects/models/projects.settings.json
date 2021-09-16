@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "events",
+  "collectionName": "projects",
   "info": {
-    "name": "Events",
-    "description": ""
+    "name": "projects"
   },
   "options": {
     "increments": true,
@@ -16,8 +15,9 @@
       "type": "string",
       "maxLength": 55
     },
-    "datetime": {
-      "type": "datetime"
+    "description": {
+      "type": "text",
+      "maxLength": 255
     },
     "logo": {
       "model": "file",
@@ -28,14 +28,6 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
-    },
-    "category": {
-      "model": "category",
-      "via": "events"
-    },
-    "description": {
-      "type": "text",
-      "maxLength": 255
     },
     "image_1": {
       "model": "file",
@@ -57,8 +49,13 @@
       "required": false,
       "pluginOptions": {}
     },
+    "category": {
+      "model": "category",
+      "via": "projects"
+    },
     "color": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 55
     }
   }
 }

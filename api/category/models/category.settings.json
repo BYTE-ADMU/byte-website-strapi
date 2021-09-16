@@ -12,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "maxLength": 55
     },
-    "events": {
+    "projects": {
       "via": "category",
-      "collection": "events"
+      "collection": "projects"
     }
   }
 }
