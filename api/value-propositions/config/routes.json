@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/value-propositions",
+      "handler": "value-propositions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/value-propositions/count",
+      "handler": "value-propositions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/value-propositions/:id",
+      "handler": "value-propositions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/value-propositions",
+      "handler": "value-propositions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/value-propositions/:id",
+      "handler": "value-propositions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/value-propositions/:id",
+      "handler": "value-propositions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

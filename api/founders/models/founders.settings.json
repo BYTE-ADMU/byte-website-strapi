@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "founders",
+  "info": {
+    "name": "founders"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "startups": {
+      "collection": "startups",
+      "via": "founders",
+      "dominant": true
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 55
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

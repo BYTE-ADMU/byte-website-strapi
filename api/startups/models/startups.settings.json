@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "projects",
+  "collectionName": "startups",
   "info": {
-    "name": "Projects",
-    "description": ""
+    "name": "startups"
   },
   "options": {
     "increments": true,
@@ -16,9 +15,6 @@
       "type": "string",
       "maxLength": 55
     },
-    "datetime": {
-      "type": "datetime"
-    },
     "logo": {
       "model": "file",
       "via": "related",
@@ -29,15 +25,11 @@
       "required": false,
       "pluginOptions": {}
     },
-    "category": {
-      "model": "category",
-      "via": "events"
-    },
     "description": {
       "type": "text",
       "maxLength": 255
     },
-    "image_1": {
+    "banner": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -47,15 +39,9 @@
       "required": false,
       "pluginOptions": {}
     },
-    "image_2": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
+    "founders": {
+      "via": "startups",
+      "collection": "founders"
     }
   }
 }
