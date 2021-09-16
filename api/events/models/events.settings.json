@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "projects",
+  "collectionName": "events",
   "info": {
-    "name": "Projects",
+    "name": "Events",
     "description": ""
   },
   "options": {
