@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "gallery",
   "info": {
-    "name": "gallery"
+    "name": "gallery",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,7 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "members": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images"
