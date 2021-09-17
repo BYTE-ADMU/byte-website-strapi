@@ -450,6 +450,7 @@ type Projects {
   category: Category
   color: String
   subtitle: String
+  teaser: String
   published_at: DateTime
 }
 
@@ -476,6 +477,7 @@ type ProjectsGroupBy {
   category: [ProjectsConnectionCategory]
   color: [ProjectsConnectionColor]
   subtitle: [ProjectsConnectionSubtitle]
+  teaser: [ProjectsConnectionTeaser]
   published_at: [ProjectsConnectionPublished_at]
 }
 
@@ -534,6 +536,11 @@ type ProjectsConnectionSubtitle {
   connection: ProjectsConnection
 }
 
+type ProjectsConnectionTeaser {
+  key: String
+  connection: ProjectsConnection
+}
+
 type ProjectsConnectionPublished_at {
   key: DateTime
   connection: ProjectsConnection
@@ -548,6 +555,7 @@ input ProjectInput {
   category: ID
   color: String
   subtitle: String
+  teaser: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -562,6 +570,7 @@ input editProjectInput {
   category: ID
   color: String
   subtitle: String
+  teaser: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1401,7 +1410,7 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionName | CategoryConnectionPublished_at | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Founders | FoundersConnection | FoundersAggregator | FoundersGroupBy | FoundersConnectionId | FoundersConnectionCreated_at | FoundersConnectionUpdated_at | FoundersConnectionName | FoundersConnectionPhoto | FoundersConnectionPublished_at | createFounderPayload | updateFounderPayload | deleteFounderPayload | Gallery | GalleryConnection | GalleryAggregator | GalleryGroupBy | GalleryConnectionId | GalleryConnectionCreated_at | GalleryConnectionUpdated_at | GalleryConnectionMembers | GalleryConnectionPublished_at | createGalleryPayload | updateGalleryPayload | deleteGalleryPayload | Info | InfoConnection | InfoAggregator | InfoGroupBy | InfoConnectionId | InfoConnectionCreated_at | InfoConnectionUpdated_at | InfoConnectionTitle | InfoConnectionDescription | InfoConnectionImage | InfoConnectionPublished_at | createInfoPayload | updateInfoPayload | deleteInfoPayload | Projects | ProjectsConnection | ProjectsAggregator | ProjectsGroupBy | ProjectsConnectionId | ProjectsConnectionCreated_at | ProjectsConnectionUpdated_at | ProjectsConnectionName | ProjectsConnectionDescription | ProjectsConnectionLogo | ProjectsConnectionImage_1 | ProjectsConnectionImage_2 | ProjectsConnectionCategory | ProjectsConnectionColor | ProjectsConnectionSubtitle | ProjectsConnectionPublished_at | createProjectPayload | updateProjectPayload | deleteProjectPayload | Startups | StartupsConnection | StartupsAggregator | StartupsGroupBy | StartupsConnectionId | StartupsConnectionCreated_at | StartupsConnectionUpdated_at | StartupsConnectionName | StartupsConnectionLogo | StartupsConnectionDescription | StartupsConnectionBanner | StartupsConnectionPublished_at | createStartupPayload | updateStartupPayload | deleteStartupPayload | Testimonials | TestimonialsConnection | TestimonialsAggregator | TestimonialsGroupBy | TestimonialsConnectionId | TestimonialsConnectionCreated_at | TestimonialsConnectionUpdated_at | TestimonialsConnectionName | TestimonialsConnectionQuote | TestimonialsConnectionImage | TestimonialsConnectionSecret | TestimonialsConnectionPublished_at | createTestimonialPayload | updateTestimonialPayload | deleteTestimonialPayload | ValuePropositions | ValuePropositionsConnection | ValuePropositionsAggregator | ValuePropositionsGroupBy | ValuePropositionsConnectionId | ValuePropositionsConnectionCreated_at | ValuePropositionsConnectionUpdated_at | ValuePropositionsConnectionDescription | ValuePropositionsConnectionImage | ValuePropositionsConnectionPublished_at | createValuePropositionPayload | updateValuePropositionPayload | deleteValuePropositionPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionName | CategoryConnectionPublished_at | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Founders | FoundersConnection | FoundersAggregator | FoundersGroupBy | FoundersConnectionId | FoundersConnectionCreated_at | FoundersConnectionUpdated_at | FoundersConnectionName | FoundersConnectionPhoto | FoundersConnectionPublished_at | createFounderPayload | updateFounderPayload | deleteFounderPayload | Gallery | GalleryConnection | GalleryAggregator | GalleryGroupBy | GalleryConnectionId | GalleryConnectionCreated_at | GalleryConnectionUpdated_at | GalleryConnectionMembers | GalleryConnectionPublished_at | createGalleryPayload | updateGalleryPayload | deleteGalleryPayload | Info | InfoConnection | InfoAggregator | InfoGroupBy | InfoConnectionId | InfoConnectionCreated_at | InfoConnectionUpdated_at | InfoConnectionTitle | InfoConnectionDescription | InfoConnectionImage | InfoConnectionPublished_at | createInfoPayload | updateInfoPayload | deleteInfoPayload | Projects | ProjectsConnection | ProjectsAggregator | ProjectsGroupBy | ProjectsConnectionId | ProjectsConnectionCreated_at | ProjectsConnectionUpdated_at | ProjectsConnectionName | ProjectsConnectionDescription | ProjectsConnectionLogo | ProjectsConnectionImage_1 | ProjectsConnectionImage_2 | ProjectsConnectionCategory | ProjectsConnectionColor | ProjectsConnectionSubtitle | ProjectsConnectionTeaser | ProjectsConnectionPublished_at | createProjectPayload | updateProjectPayload | deleteProjectPayload | Startups | StartupsConnection | StartupsAggregator | StartupsGroupBy | StartupsConnectionId | StartupsConnectionCreated_at | StartupsConnectionUpdated_at | StartupsConnectionName | StartupsConnectionLogo | StartupsConnectionDescription | StartupsConnectionBanner | StartupsConnectionPublished_at | createStartupPayload | updateStartupPayload | deleteStartupPayload | Testimonials | TestimonialsConnection | TestimonialsAggregator | TestimonialsGroupBy | TestimonialsConnectionId | TestimonialsConnectionCreated_at | TestimonialsConnectionUpdated_at | TestimonialsConnectionName | TestimonialsConnectionQuote | TestimonialsConnectionImage | TestimonialsConnectionSecret | TestimonialsConnectionPublished_at | createTestimonialPayload | updateTestimonialPayload | deleteTestimonialPayload | ValuePropositions | ValuePropositionsConnection | ValuePropositionsAggregator | ValuePropositionsGroupBy | ValuePropositionsConnectionId | ValuePropositionsConnectionCreated_at | ValuePropositionsConnectionUpdated_at | ValuePropositionsConnectionDescription | ValuePropositionsConnectionImage | ValuePropositionsConnectionPublished_at | createValuePropositionPayload | updateValuePropositionPayload | deleteValuePropositionPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
 
 input InputID {
   id: ID!

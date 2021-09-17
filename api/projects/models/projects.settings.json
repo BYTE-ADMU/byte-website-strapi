@@ -61,6 +61,9 @@
     "subtitle": {
       "type": "string",
       "maxLength": 55
+    },
+    "teaser": {
+      "type": "text"
     }
   }
 }
