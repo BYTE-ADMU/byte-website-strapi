@@ -12,8 +12,8 @@
   "pluginOptions": {},
   "attributes": {
     "startups": {
-      "collection": "startups",
       "via": "founders",
+      "collection": "startups",
       "dominant": true
     },
     "name": {

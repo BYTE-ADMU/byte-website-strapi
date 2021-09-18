@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "startups",
   "info": {
-    "name": "startups"
+    "name": "startups",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -27,7 +28,7 @@
     },
     "description": {
       "type": "text",
-      "maxLength": 255
+      "maxLength": 500
     },
     "banner": {
       "model": "file",

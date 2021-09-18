@@ -18,7 +18,7 @@
     },
     "quote": {
       "type": "richtext",
-      "maxLength": 355
+      "maxLength": 500
     },
     "image": {
       "model": "file",
